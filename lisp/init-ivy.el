@@ -4,7 +4,7 @@
                   ivy-count-format ""
                   projectile-completion-system 'ivy
                   ivy-initial-inputs-alist
-                  '((counsel-M-x . "^")
+                  '((counsel-M-x . "")
                     (man . "^")
                     (woman . "^")))
     ;; IDO-style directory navigation
@@ -37,9 +37,9 @@
   (add-hook 'after-init-hook 'counsel-mode))
 
 
-;;(when (maybe-require-package 'swiper)
-;;  (after-load 'ivy
-;;    (define-key ivy-mode-map (kbd "C-s") 'swiper)))
+(when (maybe-require-package 'swiper)
+  (after-load 'ivy
+    (define-key ivy-mode-map (kbd "C-s") 'swiper)))
 
 
 

@@ -5,18 +5,8 @@
               dired-dwim-target t)
 
 ;; Prefer g-prefixed coreutils version of standard utilities when available
-(let ((gls (executable-find "gls")))
-  (when gls (setq insert-directory-program gls)))
-
-(after-load 'dired
-  (require 'dired+)
-  (require 'dired-sort)
-  (when (fboundp 'global-dired-hide-details-mode)
-    (global-dired-hide-details-mode -1))
-  (setq dired-recursive-deletes 'top)
-  (define-key dired-mode-map [mouse-2] 'dired-find-file)
-  (add-hook 'dired-mode-hook
-            (lambda () (guide-key/add-local-guide-key-sequence "%"))))
+;; (let ((gls (executable-find "gls")))
+;;   (when gls (setq insert-directory-program gls)))
 
 (when (maybe-require-package 'diff-hl)
   (after-load 'dired
